@@ -1,0 +1,26 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+button {
+    background-color: #191825;
+    color: white;
+    font-size: 24px;
+    padding: 16px 32px;
+    border: none;
+    border-radius: 20px;
+    display: block;
+    margin: auto;
+    cursor: pointer;
+}
+#output{
+    font-style: italic;
+}
+footer {
+    position: fixed;
+    bottom: 0;
+    right: 100;
+    color: black;
+    }

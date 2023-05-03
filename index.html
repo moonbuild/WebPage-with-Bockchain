@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <title>Implementing Blockchain with Web</title> 
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+        <div>
+            <button onclick="displayHello()">Knock Knock</button>
+            <br>
+            <p id="output"></p>
+        </div>
+
+    <script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js/dist/web3.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+        
+    <script>
+    var web3 = new Web3(window.ethereum);
+    async function displayHello() {
+        // ------------------------------->your ethereum address
+        const contractAddress = '0xc9BEA1c5ABF00932429Fb779e2548B18E1c0d311';
+        const abi = [{"inputs":[],"name":"sayHello","outputs":[{"internalType":"string","name":"","type":"string"}],"stateMutability":"pure","type":"function"}];
+
+        const contractInstance = new web3.eth.Contract(abi, contractAddress);
+        const result = await contractInstance.methods.sayHello().call();
+                
+        const outputDiv = document.getElementById('output');
+        outputDiv.innerHTML = result;
+    }
+    </script>
+
+    </body>    
+</html>
